@@ -1,0 +1,391 @@
+{
+  "schema": "attribution-run/v1",
+  "as_of": "2026-10-25",
+  "paid_through": "2026-10-25",
+  "paid_refs_excluded_for_budget": [
+    "P01",
+    "P02",
+    "P03"
+  ],
+  "generated_date": "2026-11-19",
+  "source_hash": "f59c35252cefc35ba8fbf28ac589794e3b21b430993dddd007e198f9edfce9be",
+  "appointments": [
+    {
+      "appointment": "A1",
+      "origin": "自然入口",
+      "area": "甲区",
+      "date": "2026-10-18",
+      "state": "有效",
+      "confirmable": true,
+      "confirm_reason": "预约仍有效且取消窗口已结束",
+      "natural_excluded_from_payment": true,
+      "natural_reason": "存在可归属的采购触点证据，自然入口不能确定，须先解除渠道归属争议",
+      "same_person_groups": {},
+      "options": [
+        {
+          "contract": "C1",
+          "channel": "社区报",
+          "touch": "T1",
+          "edge": "L1",
+          "edge_state": "候选",
+          "touch_kind": "独立",
+          "same_person": null,
+          "window_ok": true,
+          "evidence_level": "candidate",
+          "reasons": [
+            "触点 T1（社区报/甲区/2026-10-15，独立）",
+            "关联边 L1 状态=候选",
+            "自然日差 3 天，合约 C1 窗口 8 天"
+          ]
+        },
+        {
+          "contract": "C2",
+          "channel": "图文号",
+          "touch": "T2",
+          "edge": "L2",
+          "edge_state": "候选",
+          "touch_kind": "独立",
+          "same_person": null,
+          "window_ok": true,
+          "evidence_level": "candidate",
+          "reasons": [
+            "触点 T2（图文号/甲区/2026-10-16，独立）",
+            "关联边 L2 状态=候选",
+            "自然日差 2 天，合约 C2 窗口 7 天"
+          ]
+        }
+      ]
+    },
+    {
+      "appointment": "A2",
+      "origin": "服务台",
+      "area": "甲区",
+      "date": "2026-10-19",
+      "state": "有效",
+      "confirmable": true,
+      "confirm_reason": "预约仍有效且取消窗口已结束",
+      "natural_excluded_from_payment": false,
+      "natural_reason": "来源登记为服务台，不适用自然判定",
+      "same_person_groups": {
+        "P2": [
+          "L3"
+        ]
+      },
+      "options": [
+        {
+          "contract": "C2",
+          "channel": "图文号",
+          "touch": "T2",
+          "edge": "L3",
+          "edge_state": "确认",
+          "touch_kind": "独立",
+          "same_person": "P2",
+          "window_ok": true,
+          "evidence_level": "confirmed",
+          "reasons": [
+            "触点 T2（图文号/甲区/2026-10-16，独立）",
+            "关联边 L3 状态=确认",
+            "自然日差 3 天，合约 C2 窗口 7 天"
+          ]
+        }
+      ]
+    },
+    {
+      "appointment": "A3",
+      "origin": "服务台",
+      "area": "甲区",
+      "date": "2026-10-22",
+      "state": "有效",
+      "confirmable": false,
+      "confirm_reason": "取消窗口截至 2026-10-26（含当日），2026-10-25 尚未走完，不能确认",
+      "natural_excluded_from_payment": false,
+      "natural_reason": "来源登记为服务台，不适用自然判定",
+      "same_person_groups": {},
+      "options": [
+        {
+          "contract": "C1",
+          "channel": "社区报",
+          "touch": "T3",
+          "edge": "L4",
+          "edge_state": "候选",
+          "touch_kind": "汇总",
+          "same_person": null,
+          "window_ok": true,
+          "evidence_level": "bound_only",
+          "reasons": [
+            "触点 T3（社区报/甲区/2026-10-16，汇总）",
+            "关联边 L4 状态=候选",
+            "自然日差 6 天，合约 C1 窗口 8 天"
+          ]
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "S1",
+      "awards": [
+        {
+          "appointment": "A2",
+          "contract": "C2",
+          "channel": "图文号",
+          "touch": "T2",
+          "edge": "L3",
+          "same_person": "P2"
+        }
+      ],
+      "per_contract": {
+        "C1": {
+          "count": 0,
+          "gross": 0,
+          "holdback": 0,
+          "cash_now": 0
+        },
+        "C2": {
+          "count": 1,
+          "gross": 180,
+          "holdback": 54,
+          "cash_now": 126
+        }
+      },
+      "total_gross": 180,
+      "total_holdback": 54,
+      "total_cash_now": 126
+    }
+  ],
+  "count_envelopes": {
+    "C1": {
+      "channel": "社区报",
+      "min_count": 0,
+      "max_count": 0,
+      "attainable_together": "各渠道上限取自不同场景，不得相加承诺"
+    },
+    "C2": {
+      "channel": "图文号",
+      "min_count": 1,
+      "max_count": 1,
+      "attainable_together": "各渠道上限取自不同场景，不得相加承诺"
+    },
+    "__joint__": {
+      "min_count": 1,
+      "max_count": 1,
+      "note": "同一预算组内全部可辩护场景的合计边界"
+    }
+  },
+  "uncertainty_register": [
+    {
+      "appointment": "A1",
+      "kind": "unconfirmed",
+      "summary": "只有候选关联或汇总上界，没有可独立兑现的确认证据",
+      "possible_contracts": [
+        "C1",
+        "C2"
+      ],
+      "capacity_bounds": [],
+      "narrowing": [
+        "把候选关联升级为 same_person 确认关联，或补充独立触点回执",
+        "汇总上界需逐人落地，不能直接补给最缺业绩的渠道"
+      ],
+      "detail": {
+        "candidate_edges": [
+          "L1",
+          "L2"
+        ],
+        "bound_edges": []
+      }
+    },
+    {
+      "appointment": "A1",
+      "kind": "natural",
+      "summary": "存在可归属的采购触点证据，自然入口不能确定，须先解除渠道归属争议",
+      "possible_contracts": [
+        "C1",
+        "C2"
+      ],
+      "capacity_bounds": [],
+      "narrowing": [
+        "若要排除付款，需明确的非采购联系证明，或确认所有渠道均不可归属"
+      ],
+      "detail": {
+        "natural_excluded_from_payment": true
+      }
+    },
+    {
+      "appointment": "A3",
+      "kind": "pending_window",
+      "summary": "取消窗口截至 2026-10-26（含当日），2026-10-25 尚未走完，不能确认",
+      "possible_contracts": [],
+      "capacity_bounds": [
+        {
+          "contract": "C1",
+          "channel": "社区报",
+          "area": "甲区",
+          "touch_date": "2026-10-16",
+          "upper_bound_people": 2,
+          "note": "汇总人数仅为容量上界，不能独立兑现，需落地为独立触点确认关联"
+        }
+      ],
+      "narrowing": [
+        "重新有效或窗口结束后再评估；已撤销预约不得参与当期可兑现额"
+      ],
+      "detail": {
+        "state": "有效"
+      }
+    }
+  ],
+  "guarantees": [
+    {
+      "contract": "C1",
+      "channel": "社区报",
+      "guarantee_amount": 100,
+      "material_paid": 0,
+      "evidence_refs": [],
+      "payable_now": 0,
+      "contingent": 100,
+      "status": "缺素材交付凭据，暂不可付"
+    },
+    {
+      "contract": "C2",
+      "channel": "图文号",
+      "guarantee_amount": 90,
+      "material_paid": 0,
+      "evidence_refs": [],
+      "payable_now": 0,
+      "contingent": 90,
+      "status": "缺素材交付凭据，暂不可付"
+    }
+  ],
+  "budget": {
+    "contracts": {
+      "C1": {
+        "channel": "社区报",
+        "period_cap": 520,
+        "cap_through": "2026-12-31",
+        "paid_encumbered": 0,
+        "scenario_cumulative": {
+          "S1": 0
+        },
+        "headroom_min": 520,
+        "breached_scenarios": []
+      },
+      "C2": {
+        "channel": "图文号",
+        "period_cap": 550,
+        "cap_through": "2026-12-31",
+        "paid_encumbered": 0,
+        "scenario_cumulative": {
+          "S1": 180
+        },
+        "headroom_min": 370,
+        "breached_scenarios": []
+      }
+    },
+    "portfolio": {
+      "scope": "宜居十月",
+      "portfolio_cap": 610,
+      "paid_encumbered": 0,
+      "scenario_cumulative": {
+        "S1": 180
+      },
+      "headroom_min": 430,
+      "breached_scenarios": []
+    }
+  },
+  "firm_obligation_gap": {
+    "obligations": [
+      {
+        "contract": "C2",
+        "amount": 126
+      }
+    ],
+    "total_firm": 126,
+    "headroom": 430,
+    "shortfall": 0,
+    "all_debts_listed": true
+  },
+  "cashier": {
+    "material_payable_now": [],
+    "robust_contribution_minimum": [
+      {
+        "contract": "C1",
+        "channel": "社区报",
+        "min_gross_across_scenarios": 0,
+        "min_cash_across_scenarios": 0,
+        "note": "任何可辩护归属下都至少应付；为 0 表示全部贡献价值仍在争议区，不得预支"
+      },
+      {
+        "contract": "C2",
+        "channel": "图文号",
+        "min_gross_across_scenarios": 180,
+        "min_cash_across_scenarios": 126,
+        "note": "任何可辩护归属下都至少应付；为 0 表示全部贡献价值仍在争议区，不得预支"
+      }
+    ],
+    "holdback_reserves_by_scenario": [
+      {
+        "scenario": "S1",
+        "per_contract": {
+          "C1": 0,
+          "C2": 54
+        },
+        "total": 54,
+        "release_condition": "归属争议解除且取消窗口结束"
+      }
+    ],
+    "blocked_holds": [],
+    "recovery_candidates": [],
+    "contingent_guarantees": [
+      {
+        "contract": "C1",
+        "amount": 100,
+        "reason": "缺素材交付凭据，暂不可付"
+      },
+      {
+        "contract": "C2",
+        "amount": 90,
+        "reason": "缺素材交付凭据，暂不可付"
+      }
+    ]
+  },
+  "paid_trace": [
+    {
+      "reference": "P01",
+      "contract": "C1",
+      "period": "2026-10",
+      "amount": 100,
+      "state": "已结",
+      "delivery": true,
+      "evidence_ref": "素材交付一",
+      "kind": "素材交付款",
+      "immutable": true,
+      "support": "素材交付凭据存在，支持保底付款"
+    },
+    {
+      "reference": "P02",
+      "contract": "C2",
+      "period": "2026-10",
+      "amount": 120,
+      "state": "已结",
+      "delivery": true,
+      "evidence_ref": "A2",
+      "kind": "转化贡献款",
+      "immutable": true,
+      "appointment_state_now": "有效",
+      "support": "预约仍有效，按当前归属场景复核"
+    },
+    {
+      "reference": "P03",
+      "contract": "C2",
+      "period": "2026-10",
+      "amount": 54,
+      "state": "留置",
+      "delivery": true,
+      "evidence_ref": "A2",
+      "kind": "转化贡献款",
+      "immutable": true,
+      "appointment_state_now": "有效",
+      "support": "预约仍有效，按当前归属场景复核"
+    }
+  ],
+  "run_hash": "456b634ece6899092d4d99450062f2d15e0790cd266eb6f9cbdfc08632ba060e"
+}

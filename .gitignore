@@ -10,3 +10,6 @@ coverage/
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# 本地拟制账运行产物（只追加台账与报告，不入库）
+ledger/

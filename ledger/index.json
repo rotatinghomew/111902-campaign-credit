@@ -1,0 +1,15 @@
+{
+  "runs": [
+    {
+      "as_of": "2026-11-19",
+      "path": "runs/run-2026-11-19-1.json",
+      "run_hash": "dac6a03b39f24e56a1c4713e65a1e8c250fd94a8e15ca1ea99717bcae2121d3b"
+    },
+    {
+      "as_of": "2026-10-25",
+      "path": "runs/run-2026-10-25-1.json",
+      "run_hash": "456b634ece6899092d4d99450062f2d15e0790cd266eb6f9cbdfc08632ba060e"
+    }
+  ],
+  "proposal_file": "proposals/proposals.jsonl"
+}
