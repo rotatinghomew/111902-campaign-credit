@@ -1,0 +1,204 @@
+{
+  "synthetic": true,
+  "tables": {
+    "touches": [
+      {
+        "touch": "T1",
+        "channel": "社区报",
+        "area": "甲区",
+        "date": "2026-10-15",
+        "kind": "独立",
+        "count": 1
+      },
+      {
+        "touch": "T2",
+        "channel": "图文号",
+        "area": "甲区",
+        "date": "2026-10-16",
+        "kind": "独立",
+        "count": 1
+      },
+      {
+        "touch": "T3",
+        "channel": "社区报",
+        "area": "甲区",
+        "date": "2026-10-16",
+        "kind": "汇总",
+        "count": 2
+      },
+      {
+        "touch": "T4",
+        "channel": "图文号",
+        "area": "乙区",
+        "date": "2026-10-15",
+        "kind": "汇总",
+        "count": 3
+      }
+    ],
+    "appointments": [
+      {
+        "appointment": "A1",
+        "origin": "自然入口",
+        "area": "甲区",
+        "date": "2026-10-18",
+        "cancel_until": "2026-10-22",
+        "state": "有效",
+        "recorded": "2026-10-18"
+      },
+      {
+        "appointment": "A2",
+        "origin": "服务台",
+        "area": "甲区",
+        "date": "2026-10-19",
+        "cancel_until": "2026-10-23",
+        "state": "有效",
+        "recorded": "2026-10-19"
+      },
+      {
+        "appointment": "A3",
+        "origin": "服务台",
+        "area": "甲区",
+        "date": "2026-10-22",
+        "cancel_until": "2026-10-26",
+        "state": "有效",
+        "recorded": "2026-10-22"
+      },
+      {
+        "appointment": "A2",
+        "origin": "服务台",
+        "area": "甲区",
+        "date": "2026-10-19",
+        "cancel_until": "2026-10-23",
+        "state": "撤销",
+        "recorded": "2026-11-02"
+      }
+    ],
+    "links": [
+      {
+        "edge": "L1",
+        "touch": "T1",
+        "appointment": "A1",
+        "state": "候选",
+        "same_person": null,
+        "recorded": "2026-10-20"
+      },
+      {
+        "edge": "L2",
+        "touch": "T2",
+        "appointment": "A1",
+        "state": "候选",
+        "same_person": null,
+        "recorded": "2026-10-20"
+      },
+      {
+        "edge": "L3",
+        "touch": "T2",
+        "appointment": "A2",
+        "state": "确认",
+        "same_person": "P2",
+        "recorded": "2026-10-20"
+      },
+      {
+        "edge": "L4",
+        "touch": "T3",
+        "appointment": "A3",
+        "state": "候选",
+        "same_person": null,
+        "recorded": "2026-10-23"
+      },
+      {
+        "edge": "L1",
+        "touch": "T1",
+        "appointment": "A1",
+        "state": "确认",
+        "same_person": "P1",
+        "recorded": "2026-11-01"
+      },
+      {
+        "edge": "L2",
+        "touch": "T2",
+        "appointment": "A1",
+        "state": "确认",
+        "same_person": "P1",
+        "recorded": "2026-11-01"
+      }
+    ],
+    "contract_terms": [
+      {
+        "contract": "C1",
+        "channel": "社区报",
+        "max_days": 8,
+        "exclusive_group": "宜居十月",
+        "guarantee": 100,
+        "period_cap": 520,
+        "cap_through": "2026-12-31",
+        "holdback": 0.2,
+        "tiers": [
+          {
+            "upto": 1,
+            "rate": 170
+          },
+          {
+            "upto": 10,
+            "rate": 220
+          }
+        ]
+      },
+      {
+        "contract": "C2",
+        "channel": "图文号",
+        "max_days": 7,
+        "exclusive_group": "宜居十月",
+        "guarantee": 90,
+        "period_cap": 550,
+        "cap_through": "2026-12-31",
+        "holdback": 0.3,
+        "tiers": [
+          {
+            "upto": 1,
+            "rate": 180
+          },
+          {
+            "upto": 10,
+            "rate": 230
+          }
+        ]
+      }
+    ],
+    "settlement_budget": [
+      {
+        "scope": "宜居十月",
+        "portfolio_cap": 610
+      }
+    ],
+    "paid": [
+      {
+        "reference": "P01",
+        "contract": "C1",
+        "period": "2026-10",
+        "amount": 100,
+        "state": "已结",
+        "delivery": true,
+        "evidence_ref": "素材交付一"
+      },
+      {
+        "reference": "P02",
+        "contract": "C2",
+        "period": "2026-10",
+        "amount": 120,
+        "state": "已结",
+        "delivery": true,
+        "evidence_ref": "A2"
+      },
+      {
+        "reference": "P03",
+        "contract": "C2",
+        "period": "2026-10",
+        "amount": 54,
+        "state": "留置",
+        "delivery": true,
+        "evidence_ref": "A2"
+      }
+    ]
+  }
+}

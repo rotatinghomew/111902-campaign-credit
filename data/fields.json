@@ -1,0 +1,126 @@
+{
+  "touches": {
+    "touch": [
+      "str"
+    ],
+    "channel": [
+      "str"
+    ],
+    "area": [
+      "str"
+    ],
+    "date": [
+      "str"
+    ],
+    "kind": [
+      "str"
+    ],
+    "count": [
+      "int"
+    ]
+  },
+  "appointments": {
+    "appointment": [
+      "str"
+    ],
+    "origin": [
+      "str"
+    ],
+    "area": [
+      "str"
+    ],
+    "date": [
+      "str"
+    ],
+    "cancel_until": [
+      "str"
+    ],
+    "state": [
+      "str"
+    ],
+    "recorded": [
+      "str"
+    ]
+  },
+  "links": {
+    "edge": [
+      "str"
+    ],
+    "touch": [
+      "str"
+    ],
+    "appointment": [
+      "str"
+    ],
+    "state": [
+      "str"
+    ],
+    "same_person": [
+      "NoneType",
+      "str"
+    ],
+    "recorded": [
+      "str"
+    ]
+  },
+  "contract_terms": {
+    "contract": [
+      "str"
+    ],
+    "channel": [
+      "str"
+    ],
+    "max_days": [
+      "int"
+    ],
+    "exclusive_group": [
+      "str"
+    ],
+    "guarantee": [
+      "int"
+    ],
+    "period_cap": [
+      "int"
+    ],
+    "cap_through": [
+      "str"
+    ],
+    "holdback": [
+      "float"
+    ],
+    "tiers": [
+      "list"
+    ]
+  },
+  "settlement_budget": {
+    "scope": [
+      "str"
+    ],
+    "portfolio_cap": [
+      "int"
+    ]
+  },
+  "paid": {
+    "reference": [
+      "str"
+    ],
+    "contract": [
+      "str"
+    ],
+    "period": [
+      "str"
+    ],
+    "amount": [
+      "int"
+    ],
+    "state": [
+      "str"
+    ],
+    "delivery": [
+      "bool"
+    ],
+    "evidence_ref": [
+      "str"
+    ]
+  }
+}
